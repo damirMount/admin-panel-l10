@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminArticleController;
+use App\Http\Controllers\Admin\AdminBusinessController;
+use App\Http\Controllers\Admin\AdminDepartmentController;
+use App\Http\Controllers\Admin\AdminFamilyController;
+use App\Http\Controllers\Admin\AdminItemController;
+use App\Http\Controllers\Admin\AdminPersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')->name('admin_')->group(function () {
+    Route::resources([
+        'articles' => AdminArticleController::class,
+        'businesses' => AdminBusinessController::class,
+        'families' => AdminFamilyController::class,
+        'items' => AdminItemController::class,
+        'persons' => AdminPersonController::class,
+        'departments' => AdminDepartmentController::class,
+    ]);
 });
