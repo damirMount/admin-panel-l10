@@ -4,15 +4,35 @@
     <div class="p-3 bg-form card-body-admin">
         <div class="row">
             <div class="col-12 col-sm-10 col-lg-12 col-md-10 pb-5 px-5">
-                <form action="{{ route('admin_articles.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin_businesses.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row justify-content-center">
-                        <p class="font-weight-bold h2">Добавление новости</p>
+                        <p class="font-weight-bold h2">Добавление бизнес</p>
                     </div>
                     <div class="form-group">
-                        <label for="title_input">Заголовок:<span class="text-danger">*</span></label>
-                        <input id="title_input" type="text" class="form-control" name="title" required value="{{old('title')}}">
+                        <label for="title_input">Наименование:<span class="text-danger">*</span></label>
+                        <input id="title_input" type="text" class="form-control" name="name" required value="{{old('name')}}">
                     </div>
+                    <div class="form-group">
+                        <label for="title_input">Тип:<span class="text-danger">*</span></label>
+                        <input id="title_input" type="text" class="form-control" name="type" required value="{{old('type')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="title_input">Слаг:<span class="text-danger">*</span></label>
+                        <input id="title_input" type="text" class="form-control" name="slug" required value="{{old('slug')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="title_input">Бюджет:<span class="text-danger">*</span></label>
+                        <input id="title_input" type="text" class="form-control" name="budget" required value="{{old('budget')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="title_input">Участники:<span class="text-danger">*</span></label>
+                        <select name="member_id" id=""></select>
+                    </div>
+
+
+
+
                     <div class="form-group">
                         <label for="brief_textarea">Заголовок:<span class="text-danger">*</span></label>
                         <textarea name="brief" id="brief_textarea" cols="30" rows="10"></textarea>
